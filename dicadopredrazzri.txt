@@ -1,0 +1,13 @@
+
+
+SELECT * FROM posts inner join posts_comentarios ON posts.id = posts_comentarios.id_post  
+ORDER BY `posts`.`id` ASC
+
+
+array(id => 10,
+	id_usuario => 1....,
+	comentários => array( id_comment => 10
+				,texto => 'texto'... ),
+	url => "https....",
+	nome => "zezim"
+);

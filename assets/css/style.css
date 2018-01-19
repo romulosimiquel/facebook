@@ -1,0 +1,127 @@
+.barramenu {
+		height: 50px !important;}
+
+/*Css caixa de texto*/
+.tam {
+		position: absolute; 
+		margin: auto;
+		left: 25% !important;
+		top: 10% }
+
+/*Css botão publicar*/
+#btnenviar {
+		position: absolute;
+		left: 41% !important;
+		margin-top: 15%; }
+
+/*Css botão escolher arquivo*/
+#arquivo {
+		position: absolute;
+		left: 4% !important; 
+		margin-top: 15%;}
+
+/*Css palavra Facebook na barra de menu*/
+#face {
+		position: absolute;
+		font-size: 22px;
+		left: 392px;
+		top: -3px;}
+
+#busar {position: relative;
+			left: 200px; }
+
+/*Css Menu dropdown*/
+#menudrop {
+		position: absolute;
+		right: 17% !important;
+		top: -5px;}
+
+		.navegar {margin-left: -200 !important;}
+
+#amizade {
+		position: relative;
+	    left: -450px;
+	    top: -5px;}
+
+/*Container conteudo do site*/
+.corpo {
+		position: relative;
+	  	overflow-x:hidden;
+		width: 70%;
+		left: -30px  !important;
+		margin: 0 auto;
+		width: 40%;
+		height: 94%;
+		border-right: 1px #E8E8E8 solid;
+		border-left: 1px #E8E8E8 solid;}
+
+
+/*Cor do texto da caixa de mensagem*/
+#text2 {
+		position: absolute;
+	    left:-41%;}
+
+/*Css caixa de texto*/
+#cardtext {
+		position: relative;
+		height: 250px;
+		border-bottom: none;}
+	
+/*Css dos cards da linha do tempo*/
+#cardconteudo {
+		position: relative;
+		height: 68%;
+		margin: auto;}
+
+/*Css botão curtir*/
+.btnacao { 
+		margin-top: -10px; 
+		position: relative;
+		top: 15px;
+		left: -20px;}
+
+/*Css legenda das fotos do post*/
+#legend { 
+ 		margin: 15px; }
+
+/*Css Caixa de Amigos*/
+ #amigos{
+	 	position: absolute;
+	 	left: 1325px;
+	 	z-index: 2;
+	 	width: 900px;
+	 	}
+
+/*Css Caixa de Grupos*/
+ #group {
+	 	position: absolute;
+	    left: 1325px;
+	 	z-index: 2;
+	 	top: 820px;
+	 	width: 900px; }
+
+ #sugestao {
+	 	position: absolute;
+	 	left: 1325px;
+	 	z-index: 2;
+	 	top: 472px;
+	 	width: 900px;	 }
+
+/* Conteudo Lateral Esquerdo*/
+#pub {
+	    left: 380px;
+	 	z-index: 2;
+	 	top: 80px;
+	 	position: absolute;
+
+}
+
+/* Css Icone de Navegação da Barra de Menu*/
+#menunav {
+	position: relative;
+	margin-left: -140px !important;
+top: -65px;
+}
+.btnenviar {
+	color: #1565c0 !important;
+}
