@@ -48,45 +48,45 @@ class Usuarios extends Model{
 		}
 	}
 
-	public function getNome($id){
+	// public function getNome($id){
 
-		$sql = "SELECT nome FROM usuarios WHERE id = '$id'";
-		$sql = $this->db->query($sql);
+	// 	$sql = "SELECT nome FROM usuarios WHERE id = '$id'";
+	// 	$sql = $this->db->query($sql);
 
-		if($sql->rowCount() > 0){
-			$sql = $sql->fetch();			
-			return $sql['nome'];
-		} else{
-			return '';
-		}
-	}
+	// 	if($sql->rowCount() > 0){
+	// 		$sql = $sql->fetch();			
+	// 		return $sql['nome'];
+	// 	} else{
+	// 		return '';
+	// 	}
+	// }
 
-	public function getBio($id){
+	// public function getBio($id){
 
-		$sql = "SELECT bio FROM usuarios WHERE id = '$id'";
-		$sql = $this->db->query($sql);
+	// 	$sql = "SELECT bio FROM usuarios WHERE id = '$id'";
+	// 	$sql = $this->db->query($sql);
 
-		if($sql->rowCount() > 0){
-			$sql = $sql->fetch();			
-			return $sql['bio'];
-		} else{
-			return '';
-		}
-	}
+	// 	if($sql->rowCount() > 0){
+	// 		$sql = $sql->fetch();			
+	// 		return $sql['bio'];
+	// 	} else{
+	// 		return '';
+	// 	}
+	// }
 
-	public function getFoto($id){
+	// public function getFoto($id){
 
-		$sql = "SELECT usuario_foto FROM usuarios WHERE id = '$id'";
-		$sql = $this->db->query($sql);
+	// 	$sql = "SELECT usuario_foto FROM usuarios WHERE id = '$id'";
+	// 	$sql = $this->db->query($sql);
 
-		if($sql->rowCount() > 0){
-			$sql = $sql->fetch();			
-			return $sql['usuario_foto'];
-		} else{
-			return '';
-		}
+	// 	if($sql->rowCount() > 0){
+	// 		$sql = $sql->fetch();			
+	// 		return $sql['usuario_foto'];
+	// 	} else{
+	// 		return '';
+	// 	}
 
-	}
+	// }
 
 
 	public function getDados($id){
@@ -132,7 +132,8 @@ class Usuarios extends Model{
 		$sql = "
 		SELECT
 			usuarios.id,
-			usuarios.nome
+			usuarios.nome,
+			usuarios.usuario_foto
 		FROM
 			usuarios
 		LEFT JOIN relacionamentos
@@ -176,7 +177,7 @@ class Usuarios extends Model{
 
 			 if(in_array($perfil['type'], $tipos)){
 
-				$url_perfil = md5(time().rand(0,999));
+				$url_perfil = "perfil".md5($id);
 				switch ($perfil['type']) {
 					case 'image/jpeg':
 					case 'image/jpg':
@@ -206,7 +207,7 @@ class Usuarios extends Model{
 			
 			if(in_array($capa['type'], $tipos)){
 
-				$url_capa = md5(time().rand(0,999));
+				$url_capa = "capa".md5($id);
 				switch ($capa['type']) {
 					case 'image/jpeg':
 					case 'image/jpg':

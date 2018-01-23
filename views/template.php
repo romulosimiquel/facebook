@@ -67,7 +67,7 @@
               <form method="POST" action="" class="col s12 editarperfil">
                 <div class="row">
                   <div class="input-field col s6">
-                    <input id="nome" type="text" name="nome" value="<?php echo($viewData['usuario_nome']); ?>" class="validate">
+                    <input id="nome" type="text" name="nome" value="<?php echo($viewData['info']['bio']); ?>" class="validate">
                     <label for="nome"></label>
                   </div>
                   
@@ -86,7 +86,7 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <textarea id="bio" name="bio" class="materialize-textarea"><?php echo($viewData['usuario_bio']); ?></textarea>
+                      <textarea id="bio" name="bio" class="materialize-textarea"><?php echo($viewData['info']['bio']); ?></textarea>
                       <label for="bio">Bio</label>
                     </div>
                   </div>
@@ -102,9 +102,9 @@
 
 <div>
  <?php
-  print_r($viewData['info']);
-  echo "<hr>";
-  echo "<h1>".$viewData['info']['email']."</h1>";
+  // print_r($viewData['info']);
+  // echo "<hr>";
+  // echo "<h1>".$viewData['info']['email']."</h1>";
  $this->loadViewInTemplate($viewName, $viewData);
  ?>
 </div>

@@ -4,7 +4,7 @@
 		<div class="card-content">
 			<!-- nome e foto de quem postou -->
 			<div class="chip">
-				<img src="assets/images/posts/mario.jpg" alt="Contact Person">
+				<img src="<?php echo BASE; ?>assets/images/usuarios/<?php echo $foto_perfil; ?>" alt="Contact Person">
 				<a href="<?php echo BASE; ?>perfil"><?php echo $nome; ?></a>
 			</div>
 			<p> </br>

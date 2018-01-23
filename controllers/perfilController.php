@@ -30,17 +30,19 @@ class perfilController extends controller {
 
 
 		// Verificação para setar os dados secundários do user
-		if((isset($_POST['universidade']) && !empty($_POST['universidade'])) || (isset($_POST['cidade']) && !empty($_POST['cidade'])) || (isset($_POST['trabalho']) && !empty($_POST['trabalho']))){
+		if((isset($_POST['universidade']) && !empty($_POST['universidade'])) || (isset($_POST['cidade']) && !empty($_POST['cidade'])) || (isset($_POST['trabalho']) && !empty($_POST['trabalho'])) || (isset($_POST['status']) && !empty($_POST['status']))){
 
 			$universidade = addslashes($_POST['universidade']);
 			$cidade = addslashes($_POST['cidade']);
 			$trabalho = addslashes($_POST['trabalho']);
+			$status = addslashes($_POST['status']);
 
 
 			$u->updatePerfil(array(
 				'universidade'	=> $universidade,
 				'cidade' 		=> $cidade,
 				'trabalho'		=> $trabalho,
+				'status'		=> $status,
 
 			));
 		}
@@ -73,8 +75,8 @@ class perfilController extends controller {
 		$dados['totalamigos'] = $r->getTotalAmigos($_SESSION['lgsocial']);
 		$dados['feed']		  = $p->getFeed();
 		$dados['grupos']	  = $g->getGrupos();
-		$dados['usuario_nome']= $u->getNome($_SESSION['lgsocial']);
-		$dados['usuario_bio'] = $u->getBio($_SESSION['lgsocial']);
+		//$dados['usuario_nome']= $u->getNome($_SESSION['lgsocial']);
+		// $dados['usuario_bio'] = $u->getBio($_SESSION['lgsocial']);
 		$dados['info'] 		  = $u->getDados($_SESSION['lgsocial']);
 
 		$this->loadTemplate('perfil', $dados);

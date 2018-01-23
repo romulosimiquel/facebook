@@ -13,9 +13,9 @@
 					<div class="row"> 
 						<div class="col s12 m12 l12"> 
 							<ul class="collection with-header">
-								<li class="collection-header grey lighten-4"><h4><?php echo $viewData['usuario_nome']; ?></h4></li>
-								<li class="collection-item grey lighten-4"><div>Página Inícial<a href="<?php echo BASE; ?>" class="secondary-content"><i class="material-icons blue-text">home</i></a></div></li>
-								<li class="collection-item grey lighten-4"><div>Perfil<a href="#!" class="secondary-content"><i class="material-icons blue-text">person</i></a></div></li>
+								<li class="collection-header grey lighten-4"><h4><?php echo $info['nome']; ?></h4></li>
+								<a href="<?php echo BASE; ?>"><li class="collection-item grey lighten-4"><div>Página Inícial<a class="secondary-content"><i class="material-icons blue-text">home</i></a></div></li></a>
+								<a href="<?php echo BASE; ?>perfil"><li class="collection-item grey lighten-4"><div>Perfil<a href="#!" class="secondary-content"><i class="material-icons blue-text">person</i></a></div></li></a>
 								<li class="collection-item grey lighten-4"><div>Fotos<a href="#!" class="secondary-content"><i class="material-icons blue-text">photo</i></a></div></li>
 								<li class="collection-item grey lighten-4"><div>Amigos<a href="#!" class="secondary-content"><i class="material-icons blue-text">group</i></a></div></li>
 							</ul>
@@ -25,13 +25,13 @@
 			</div>
 
 		</div> <!-- Fecha Coluna Esquerda-->
-
+<!-- 
 		<?php 
 			print_r($info);
 			echo "<hr/>";
 			echo "<h3>".$info['nome']."</h3>";
 		?>
-
+ -->
 		
 		<div class="col s12 m12 l6 margen-bottom">  <!-- Coluna Principal Centro -->
 			<div class="card-panel scroll" style="overflow-x: hidden;"> <!-- card-panel Principal com Scroll -->
@@ -153,14 +153,18 @@
 					<?php foreach($sugestoes as $pessoa): ?>
 						<ul class="collection">
 							<li class="collection-item avatar">
-								<img src="assets/images/posts/dj.jpg" alt="" class="circle">
+								<img src="assets/images/usuarios/<?php echo $pessoa['usuario_foto']?>" alt="" class="circle">
 								<span class="title"><?php echo $pessoa['nome']; ?></span>
 								<p> <br> </p>
 								<!-- <button class="btn btn-default pull-right" onclick="addFriend('<?php echo $pessoa['id']; ?>', this)">+</button> -->
 								<a href="" class="secondary-content" onclick="addFriend('<?php echo $pessoa['id']; ?>', this)"><i class="material-icons grey-text">add</i></a>
 							</li>
 						</ul>
-					<?php endforeach; ?>						
+					<?php endforeach; ?>
+					<?php else: ?>
+						<h5>Sugestões de amigos</h5>
+						</br>
+						<strong>Parabéns, você é amigos de todas as pessoas da Rede Social!</strong>					
 				<?php endif; ?>
 			</div>
 		</div>

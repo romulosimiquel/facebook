@@ -122,6 +122,13 @@
 				}
 				?>
 			</div>
+			<div class="row">
+				<?php
+				foreach($feed as $postitem) {
+					$this->loadView('postitem', $postitem);
+				}
+				?>
+			</div>
 		</div>
 	</div>
 	<!-- MENU LATERAL DIREITO -->
@@ -188,7 +195,11 @@
 							<a href="" class="secondary-content" onclick="addFriend('<?php echo $pessoa['id']; ?>', this)"><i class="material-icons grey-text">add</i></a>
 						</li>
 					</ul>
-				<?php endforeach; ?>						
+				<?php endforeach; ?>
+				<?php else: ?>
+						<h5>Sugestões de amigos</h5>
+						</br>
+						<strong>Parabéns, você é amigos de todas as pessoas da Rede Social!</strong>						
 			<?php endif; ?>
 		</div>
 	</div>

@@ -20,9 +20,9 @@ class homeController extends controller {
 
 		);
 		
-		$dados['usuario_nome'] = $u->getNome($_SESSION['lgsocial']);
-		$dados['usuario_bio']  = $u->getBio($_SESSION['lgsocial']);
-		$dados['usuario_foto']  = $u->getFoto($_SESSION['lgsocial']);
+		// $dados['usuario_nome'] = $u->getNome($_SESSION['lgsocial']);
+		// $dados['usuario_bio']  = $u->getBio($_SESSION['lgsocial']);
+		// $dados['usuario_foto']  = $u->getFoto($_SESSION['lgsocial']);
 
 
 		if(isset($_POST['post']) && !empty($_POST['post'])){
