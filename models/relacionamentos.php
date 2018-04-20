@@ -15,7 +15,7 @@ class Relacionamentos extends model{
 		
 	}
 
-	public function getRequisicoes(){
+	public function getRequisicoes($limit){
 		$array = array();
 
 		$sql = "
@@ -25,7 +25,8 @@ class Relacionamentos extends model{
 		FROM relacionamentos
 		LEFT JOIN usuarios
 		ON usuarios.id = relacionamentos.usuario_de
-		WHERE relacionamentos.usuario_para = '".($_SESSION['lgsocial'])."' AND relacionamentos.status = '0'";
+		WHERE relacionamentos.usuario_para = '".($_SESSION['lgsocial'])."' AND relacionamentos.status = '0'
+		LIMIT $limit";
 
 		$sql = $this->db->query($sql);
 

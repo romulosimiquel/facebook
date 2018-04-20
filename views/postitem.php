@@ -20,15 +20,18 @@
 		<!-- Botões de like e comentarios -->
 		<div class="card-action">
 			<button class="btn-flat blue-text" onclick="curtir(this)" data-id="<?php echo $id; ?>" data-likes="<?php echo $likes; ?>" data-liked="<?php echo $liked; ?>">(<?php echo $likes; ?>) <?php echo ($liked == '0')?'Curtir':'Descurtir'; ?><i class="material-icons right">thumb_up</i></button>
-			<button class="btn-flat blue-text" onclick="displayComentario(this)">Comentar <i class="material-icons right">comment</i></button>
-			<div class="postitem_comentario">
+			<button class="btn-flat blue-text" id="post_coment"  onclick="displayComentario(this)">Comentar <i class="material-icons right">comment</i></button>
+			<div class="postitem_comentario_box">
 				<br/><br/>
-				<input type="text" class="postitem_txt form-control" />
+				<div class="postitem_comentario">
+					
+				<?php echo $comentarios;?>
+
+				</div>	
+
+				<input type="text" class="postitem_txt" />
 				<button class="btn-flat" data-id="<?php echo $id; ?>" onclick="comentar(this)">Enviar</button>
 			</div>
 		</div>
-		<div class="postitem_comentarios">
-			<?php echo $comentarios;?>
-		</div>	
 	</div>
 </div>

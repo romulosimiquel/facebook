@@ -35,18 +35,19 @@ function curtir(obj) {
 	var id 	  = $(obj).attr('data-id');
 	var likes = parseInt($(obj).attr('data-likes'));
 	var liked = parseInt($(obj).attr('data-liked'));
+
 	if(liked == 0){
 		likes++;
 		liked = 1;
-		var texto = 'Descurtir';
+		var texto = ' Descurtir';
 	} else{
 		likes--;
-		like = 0;
-		var texto = 'Curtir';
+		liked = 0;
+		var texto = ' Curtir';
 	}
 
-	$(obj).html('data-likes', likes);
-	$(obj).html('data-liked', liked);
+	$(obj).attr('data-likes', likes);
+	$(obj).attr('data-liked', liked);
 
 	$(obj).html('('+likes+')'+texto);
 
@@ -59,11 +60,47 @@ function curtir(obj) {
 }
 
 function displayComentario(obj) {
-	$(obj).closest('.postitem_botoes').find('.postitem_comentario').show();
+	// var verifica = "";
+	// var mostrar = "";	
+
+	// if (mostrar == "sim"); 
+	// {
+	 	$(obj).parent('.card-action').children('.postitem_comentario_box').show('.postitem_comentario');
+	// 	mostrar = "nao";
+
+	// } else 
+	// {
+	// 	$(obj).parent('.card-action').children('.postitem_comentario_box').hide('.postitem_comentario');
+	// 	mostrar = "sim";
+	// } 
+
+	// $(obj).parent('.card-action').children('.postitem_comentario_box').addClass('.romulotop');
+
+	// if ($(obj).parent('.card-action').children('.postitem_comentario_box').css('display') == 'none')
+	// {
+	// 	verifica = "escondido";
+	// }else
+	// {
+	// 	verifica = "aparecendo";
+	// }
+
+	// $('.postitem_comentario_box').hide();
+	// $(obj).closest('.postitem_botoes').find('.postitem_comentario').slideDown(); parent('.card-action').children()
+	// $(obj).parent('.card-action').children('.postitem_comentario_box').show();
+
+	// if (verifica == "escondido"){
+	// 	$('.romulotop').show();
+	// }else{
+	// 	$('.romulotop').hide();
+	// }
+
+	// $(obj).parent('.card-action').children('.postitem_comentario_box').removeClass('.romulotop');
+
+	//$(obj).parent('.card-action').children('.postitem_comentario_box').toggle();
 }
 function comentar(obj) {
 	var id = $(obj).attr('data-id');
-	var txt = $(obj).closest('.postitem_comentario').find('.postitem_txt').val();
+	var txt = $(obj).parent('.postitem_comentario_box').children('.postitem_comentario').val(".postitem_txt");
 
 	$.ajax({
 		type:'POST',

@@ -71,7 +71,7 @@ class perfilController extends controller {
 		}
 
 		$dados['sugestoes']   = $u->getSugestoes(3);
-		$dados['requisicoes'] = $r->getRequisicoes();
+		$dados['requisicoes'] = $r->getRequisicoes(3);
 		$dados['totalamigos'] = $r->getTotalAmigos($_SESSION['lgsocial']);
 		$dados['feed']		  = $p->getFeed();
 		$dados['grupos']	  = $g->getGrupos();

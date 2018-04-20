@@ -35,7 +35,7 @@ class ajaxController extends controller {
 	public function curtir(){
 
 		if(isset($_POST['id']) && !empty($_POST['id'])){
-			$id = addslashes($_POST['id']);
+			$id 		= addslashes($_POST['id']);
 			$id_usuario = $_SESSION['lgsocial'];
 
 			$p = new posts();
@@ -50,15 +50,15 @@ class ajaxController extends controller {
 	public function comentar(){
 
 		if(isset($_POST['id']) && !empty($_POST['id'])){
-			$id = addslashes($_POST['id']);
+			$id 		= addslashes($_POST['id']);
 			$id_usuario = $_SESSION['lgsocial'];
-			$txt = addslashes($_POST['txt']);
+			$txt 		= addslashes($_POST['txt']);
 
 			$p = new posts();
 
 			if(!empty($txt)){
 				$p->addComentario($id, $id_usuario, $txt);
-			}	
+			}		
 		}
 	}
 

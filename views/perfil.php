@@ -46,9 +46,11 @@
 							</div>				
 						</div>
 
+
+						<!-- Nome e status do candando logo abaixo da foto de perfil -->
 						<div class="col s12">
 							<span class="card-title  grey-text text-darken-4"><?php echo $info['nome']; ?><i class="material-icons activator right icon-edtperfil" style="cursor: pointer;">mode_edit</i></span>
-							<label><class="card-title grey-text text-darken-4"/><?php echo $info['bio']; ?></label>
+							<label><class="card-title grey-text text-darken-4"/><?php echo $info['status']; ?></label>
 						</div>
 
 						<div class="card-action">
@@ -79,6 +81,11 @@
 							<div class="input-field col s6">
 								<input id="trabalho" name="trabalho" type="text" class="validate" value="<?php echo $info['trabalho']; ?>">
 								<label for="trabalho">Trabalho</label>
+							</div>
+
+							<div class="input-field col s6">
+								<input id="status" name="status" type="text" class="validate" value="<?php echo $info['status']; ?>">
+								<label for="status">Status</label>
 							</div>
 
 							<div class="file-field input-field col s8" style="margin-left: 0; width: 300px; height: 40px;">
@@ -188,7 +195,7 @@
 				<?php foreach($sugestoes as $pessoa): ?>
 					<ul class="collection">
 						<li class="collection-item avatar">
-							<img src="assets/images/posts/dj.jpg" alt="" class="circle">
+							<img src="assets/images/usuarios/<?php echo $pessoa['usuario_foto']?>" alt="" class="circle">
 							<span class="title"><?php echo $pessoa['nome']; ?></span>
 							<p> <br> </p>
 							<!-- <button class="btn btn-default pull-right" onclick="addFriend('<?php echo $pessoa['id']; ?>', this)">+</button> -->

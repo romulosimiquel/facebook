@@ -24,6 +24,28 @@
 				</div>
 			</div>
 
+			<div class="col s12 m12 l12	 hide-on-med-and-down">
+			<div class="card-panel white blue-text darken-3">
+
+				<h5>Grupos</h5>
+				<form method="POST">
+					<span class="black-text">Lista de meus grupos</span>
+					<ul class="collection">
+						<?php foreach($grupos as $grupo): ?>
+							<!-- <a href="<?php echo BASE; ?>grupos/abrir/<?php echo $grupo['id']; ?>"><?php echo $grupo['titulo']; ?></a> -->
+							<li class="collection-item dismissable"><div><?php echo $grupo['titulo']; ?><a href="<?php echo BASE; ?>grupos/abrir/<?php echo $grupo['id']; ?>" class="secondary-content"><i class="material-icons grey-text">group</i></a></div></li>
+						<?php endforeach; ?>
+					</ul>
+					<div class="input-group">
+						<input type="text" name="grupo" class="form-control" placeholder="Nome do grupo" />
+						<span class="input-group-btn">
+							<input type="submit" value="Criar" class="btn-flat btnenviar" />
+						</span>
+					</div>
+				</form>
+			</div>
+			</div>
+
 		</div> <!-- Fecha Coluna Esquerda-->
 <!-- 
 		<?php 
@@ -171,27 +193,7 @@
 
 
 		<!-- Lista de grupos e criação de grupos -->
-		<div class="col s12 m12 l3 hide-on-med-and-down">
-			<div class="card-panel white blue-text darken-3">
-
-				<h5>Grupos</h5>
-				<form method="POST">
-					<span class="black-text">Lista de meus grupos</span>
-					<ul class="collection">
-						<?php foreach($grupos as $grupo): ?>
-							<!-- <a href="<?php echo BASE; ?>grupos/abrir/<?php echo $grupo['id']; ?>"><?php echo $grupo['titulo']; ?></a> -->
-							<li class="collection-item dismissable"><div><?php echo $grupo['titulo']; ?><a href="<?php echo BASE; ?>grupos/abrir/<?php echo $grupo['id']; ?>" class="secondary-content"><i class="material-icons grey-text">group</i></a></div></li>
-						<?php endforeach; ?>
-					</ul>
-					<div class="input-group">
-						<input type="text" name="grupo" class="form-control" placeholder="Nome do grupo" />
-						<span class="input-group-btn">
-							<input type="submit" value="Criar" class="btn-flat btnenviar" />
-						</span>
-					</div>
-				</form>
-			</div>
-		</div>
+		
 	</div>
 </div>
 

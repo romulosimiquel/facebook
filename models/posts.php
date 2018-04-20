@@ -41,7 +41,7 @@ class Posts extends model{
 		(select usuarios.nome from usuarios where usuarios.id = posts.id_usuario) as nome,
 		(select usuarios.usuario_foto from usuarios where usuarios.id = posts.id_usuario) as foto_perfil,
 		(select count(*) from posts_likes where posts_likes.id_post = posts.id) as likes,
-		(select count(*) from posts_comentarios where posts_comentarios.id_post = posts.id) as comentarios, 
+		(select texto from posts_comentarios where posts_comentarios.id_post = posts.id) as comentarios, 
 		(select count(*) from posts_likes where posts_likes.id_post = posts.id and posts_likes.id_usuario = '".$_SESSION['lgsocial']."') as liked 
 		FROM posts 
 		WHERE id_usuario 
